@@ -16,6 +16,7 @@ class ImageProcessingApp:
         self.image = None
         self.processed_image = None
 
+        # Layout utama
         main_frame = tk.Frame(self.root, bg="#f0f4f3")
         main_frame.pack(fill="both", expand=True)
 
@@ -157,8 +158,8 @@ class ImageProcessingApp:
             self.display_image(self.processed_image, self.processed_canvas)
             popup.destroy()
 
-        tk.Button(popup, text="Sobel Horizontal", width=25, command=lambda: apply("SobelX")).pack(pady=5)
-        tk.Button(popup, text="Sobel Vertikal", width=25, command=lambda: apply("SobelY")).pack(pady=5)
+        tk.Button(popup, text="Sobel Vertikal", width=25, command=lambda: apply("SobelX")).pack(pady=5)
+        tk.Button(popup, text="Sobel Horizontal", width=25, command=lambda: apply("SobelY")).pack(pady=5)
 
     def morph_erode_custom(self):
         if not self.image:
